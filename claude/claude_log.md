@@ -4,6 +4,28 @@ A running record of what was done each session, prompt by prompt.
 
 ---
 
+## Session 2 — 2026-04-17
+
+### Prompt 1
+User asked Claude to read all documents and understand the project.
+
+**What was done:**
+- Read `claude_to_do.md`, `claude_log.md`, `RRR/sim_create.py`, `RRR/sim_view.py`, `RRR/README.md`, `docs/project.md`
+- Summarised current state: FK working, 9 known debt items, IK not yet built
+
+### Prompt 2
+User asked for an IK version of `sim_create.py` with all the same features.
+
+**What was done:**
+- Described plan in full (3 files), waited for confirmation
+- User confirmed ("ok go ahead")
+- Created `core/__init__.py` — empty package marker
+- Created `core/kinematics.py` — shared `deg2rad`, `rad2deg`, `safe_float`, `clamp`, `fk()`, `ik()` (both elbow-up and elbow-down, returns None per solution if unreachable)
+- Created `RRR/ik_create.py` — full IK GUI: px/py/φ sliders + textboxes, elbow UP/DOWN toggle, active solution solid, alternate solution dashed grey, red X target marker, base position controls, yellow box controls, save/clear/export CSV, pose list — all matching sim_create.py structure
+- Both files compile clean (`python -m py_compile`)
+
+---
+
 ## Session 1 — 2026-03-23
 
 ### Prompt 1
